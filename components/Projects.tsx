@@ -18,9 +18,7 @@ export default function Projects() {
               Currículum online con arquitectura 100% serverless: S3, CloudFront,
               Route53, API Gateway, Lambda y DynamoDB para el contador de visitas.
             </p>
-            {/* ACA REEMPLAZAR: poné el link real a tu repo de GitHub del Cloud
-                Resume Challenge. */}
-            <a href="https://github.com/TU-USUARIO/cloud-resume-challenge" className="project-link">
+            <a href="https://github.com/TutteOviedo/porfolio-matias-oviedo" className="project-link">
               Ver en GitHub →
             </a>
           </div>

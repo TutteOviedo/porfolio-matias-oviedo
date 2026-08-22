@@ -12,7 +12,7 @@ export default function Hero() {
             <br />
             soporte.
             <br />
-            <span>Ahora, resuelvo problemas reales con agentes de IA.</span>
+            Ahora, resuelvo problemas <span>reales con agentes de IA</span>.
           </h1>
           <p className="lead">
             Soy Matías Oviedo. Hago soporte de aplicaciones webs y mobiles, poco a poco fui

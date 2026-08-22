@@ -26,10 +26,6 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: "Cloud Resume Challenge - Matías Oviedo",
-  icons: {
-    icon: "/curriculum/favicon.ico",
-    apple: "/curriculum/apple-touch-icon.png",
-  },
 };
 
 export default function CurriculumLayout({
