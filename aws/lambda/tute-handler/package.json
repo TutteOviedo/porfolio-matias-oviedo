@@ -1,0 +1,9 @@
+{
+  "name": "tute-handler",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Lambda que atiende al chat de Tute. Se empaqueta y sube por separado del sitio Next.js.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
+  }
+}
