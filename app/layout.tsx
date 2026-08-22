@@ -4,7 +4,7 @@ import { TuteProvider } from "@/components/TuteProvider";
 
 const TITLE = "Matías Oviedo — Soporte, Programación & IA";
 const DESCRIPTION =
-  "Soporte de aplicaciones con 6-7 años de experiencia, ahora orientado a IA, agentes y AWS.";
+  "Soporte de aplicaciones con 6 años de experiencia, ahora orientado a IA, agentes y AWS.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://matiasoviedo.com.ar"),

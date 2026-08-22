@@ -21,7 +21,7 @@ const INITIAL_MESSAGES: Message[] = [
   { role: "user", text: "¿Qué hace Matías?" },
   {
     role: "tute",
-    text: "Soporte de aplicaciones hace 6-7 años, y desde ahí sumó programación, AWS e IA. ¿Querés que te cuente de algún proyecto puntual?",
+    text: "Soporte de aplicaciones hace 6 años, y desde ahí sumó programación, AWS e IA. ¿Querés que te cuente de algún proyecto puntual?",
   },
   { role: "user", text: "¿Cómo te hicieron a vos?" },
   {

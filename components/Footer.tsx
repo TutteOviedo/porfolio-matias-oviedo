@@ -20,8 +20,8 @@ export default function Footer() {
             <a href="https://linkedin.com/in/oviedo-matias">
               <Linkedin size={17} /> matias-oviedo
             </a>
-            <a href="https://github.com/TU-USUARIO">
-              <Github size={17} /> tu-usuario-github
+            <a href="https://github.com/TutteOviedo">
+              <Github size={17} /> TutteOviedo
             </a>
             <Link href="/curriculum">
               <FileText size={17} /> Ver mi CV
