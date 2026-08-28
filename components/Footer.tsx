@@ -18,8 +18,7 @@ export default function Footer() {
             <p>{t(d.body)}</p>
           </div>
           <div className="contact-links">
-            {/* ACA REEMPLAZAR: tu mail, usuario de LinkedIn y de GitHub reales. */}
-            <a href="mailto:tu@email.com">
+            <a href="mailto:oviedo.matias.d@gmail.com">
               <Mail size={17} /> oviedo.matias.d@gmail.com
             </a>
             <a href="https://linkedin.com/in/oviedo-matias">
