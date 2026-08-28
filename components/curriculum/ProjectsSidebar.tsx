@@ -20,7 +20,7 @@ export default function ProjectsSidebar() {
           <span className="tag">AWS Lambda &amp; DynamoDB</span>
         </div>
         <div className="d-flex justify-content-start mt-3">
-          <a href="https://github.com/TutteOviedo/cv-aws" target="_blank" rel="noreferrer" className="card-link">
+          <a href="https://github.com/TutteOviedo/porfolio-matias-oviedo" target="_blank" rel="noreferrer" className="card-link">
             Ver en GitHub ↗
           </a>
         </div>
