@@ -44,8 +44,8 @@ export const dictionary = {
       en: "real problems with AI agents",
     },
     lead: {
-      es: "Soy Matías Oviedo. Hago soporte de aplicaciones web y mobile, y poco a poco fui metiéndome en programación, entornos cloud (AWS) e inteligencia artificial — hoy diseño y testeo sistemas que automatizan lo que antes hacía a mano.",
-      en: "I'm Matías Oviedo. I do support for web and mobile apps, and little by little I got into programming, cloud environments (AWS) and artificial intelligence — today I design and test systems that automate what I used to do by hand.",
+      es: "Soy Matías Oviedo. Hago soporte de aplicaciones web y mobile, y poco a poco fui metiéndome en programación, entornos cloud (AWS) e inteligencia artificial - hoy diseño y testeo sistemas que automatizan lo que antes hacía a mano.",
+      en: "I'm Matías Oviedo. I do support for web and mobile apps, and little by little I got into programming, cloud environments (AWS) and artificial intelligence - today I design and test systems that automate what I used to do by hand.",
     },
     stat1Value: { es: "6", en: "6" },
     stat1Label: { es: "años en soporte", en: "years in support" },
@@ -156,8 +156,8 @@ export const dictionary = {
     jobfitTag: { es: "IA · Multi-agente", en: "AI · Multi-agent" },
     jobfitTitle: { es: "JobFit", en: "JobFit" },
     jobfitDesc: {
-      es: "Sistema multi-agente que analiza una oferta laboral: un researcher busca contexto de la empresa, un analyst cruza esa info con mi perfil real, y un writer arma una carta y un CV optimizado para ATS — orquestado con LangGraph.",
-      en: "Multi-agent system that analyzes a job posting: a researcher gathers context on the company, an analyst cross-references it with my real profile, and a writer produces a cover letter and an ATS-optimized resume — orchestrated with LangGraph.",
+      es: "Sistema multi-agente que analiza una oferta laboral: un researcher busca contexto de la empresa, un analyst cruza esa info con mi perfil real, y un writer arma una carta y un CV optimizado para ATS - orquestado con LangGraph.",
+      en: "Multi-agent system that analyzes a job posting: a researcher gathers context on the company, an analyst cross-references it with my real profile, and a writer produces a cover letter and an ATS-optimized resume - orchestrated with LangGraph.",
     },
     jobfitLink: { es: "Ver en GitHub →", en: "View on GitHub →" },
   },

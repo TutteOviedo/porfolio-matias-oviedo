@@ -3,7 +3,7 @@
   original.
 
   Los COLORES ya NO se definen acá: la página usa exactamente el mismo sistema
-  de tema que el resto del portfolio — los tokens --bg / --surface / --text /
+  de tema que el resto del portfolio - los tokens --bg / --surface / --text /
   --primary / --accent / --border de globals.css, que cambian según
   data-theme en <html>. Por eso el widget de Tute y el CV siempre están en el
   mismo tema, y un solo toggle controla los dos.
@@ -67,7 +67,7 @@
 
 /* ============ THEME TOGGLE ============ */
 /* El botón en sí es el <ThemeToggle> compartido (clase .theme-toggle de
-   globals.css) — mismo ícono ◐/◑ y label que en el resto del sitio. Acá
+   globals.css) - mismo ícono ◐/◑ y label que en el resto del sitio. Acá
    solo lo posicionamos fijo arriba a la derecha, espejando .cv-back-link. */
 .cv-page .cv-theme-toggle {
   position: fixed;

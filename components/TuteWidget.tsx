@@ -26,14 +26,14 @@ const INITIAL_MESSAGES: Message[] = [
   { role: "user", text: "¿Cómo te hicieron a vos?" },
   {
     role: "tute",
-    text: "Buena pregunta — te llevo a la explicación completa de cómo me armaron y me testean 👇",
+    text: "Buena pregunta - te llevo a la explicación completa de cómo me armaron y me testean 👇",
     link: { href: "/evals", label: "Ver cómo me testean →" },
   },
 ];
 
 // ACA REEMPLAZAR: esta es la respuesta de relleno que se usa en "modo demo"
 // (cuando todavía no hay una API real conectada). Cuando el backend esté
-// funcionando, este texto deja de usarse — la respuesta real la arma el
+// funcionando, este texto deja de usarse - la respuesta real la arma el
 // Lambda de /aws/lambda/tute-handler.
 const DEMO_REPLY = "Así voy a responder en vivo una vez que esté conectado a la API 👋";
 
@@ -120,14 +120,14 @@ const TuteWidget = forwardRef<TuteWidgetHandle>(function TuteWidget(_, ref) {
       await sleep(2000); // simula el tiempo de "pensar" mientras no hay API real conectada
 
       // ACA REEMPLAZAR: esto es un placeholder de prueba nomás, para tener
-      // algo que mostrar en modo demo — busca la palabra "evals" a lo bruto
+      // algo que mostrar en modo demo - busca la palabra "evals" a lo bruto
       // en el texto del usuario. Cuando el backend real esté conectado esta
       // lógica no importa en absoluto: es la Lambda la que decide, según el
       // significado de la pregunta (no la palabra literal), cuándo llamar a
       // la herramienta redirigir_a_evals().
       if (text.toLowerCase().includes("evals")) {
         reply = {
-          text: "Tengo tool use real y hago RAG sobre la base de conocimiento de Matías — no invento nada. Podés ver los casos de prueba que uso para chequear que respondo bien 👇",
+          text: "Tengo tool use real y hago RAG sobre la base de conocimiento de Matías - no invento nada. Podés ver los casos de prueba que uso para chequear que respondo bien 👇",
           link: { href: "/evals", label: "Ver evals →" },
         };
       }

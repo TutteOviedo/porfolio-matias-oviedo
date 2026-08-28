@@ -60,7 +60,7 @@ export default function Education() {
           <div>
             <div className="card-title">Técnico en Informática</div>
             <div className="card-company">Instituto Técnico Dr. Emilio Lamarca</div>
-            <div className="card-period">2012 — 2015</div>
+            <div className="card-period">2012 - 2015</div>
             <p className="card-desc mb-0">Secundario técnico con orientación en infomática.</p>
           </div>
         </div>

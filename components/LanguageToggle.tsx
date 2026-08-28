@@ -12,7 +12,7 @@ const OPTIONS: { lang: Lang; label: string }[] = [
 ];
 
 // Banderas como SVG embebido (no emojis: los emojis de bandera no se
-// renderizan en Windows — se ven como "AR" / "GB"). El proyecto no tiene
+// renderizan en Windows - se ven como "AR" / "GB"). El proyecto no tiene
 // librería de iconos de banderas, así que van inline.
 function Flag({ lang }: { lang: Lang }) {
   return lang === "es" ? <FlagAR /> : <FlagGB />;

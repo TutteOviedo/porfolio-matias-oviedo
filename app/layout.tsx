@@ -3,7 +3,7 @@ import "./globals.css";
 import { TuteProvider } from "@/components/TuteProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 
-const TITLE = "Matías Oviedo — Soporte, Programación & IA";
+const TITLE = "Matías Oviedo - Soporte, Programación & IA";
 const DESCRIPTION =
   "Soporte de aplicaciones con 6 años de experiencia, ahora orientado a IA, agentes y AWS.";
 

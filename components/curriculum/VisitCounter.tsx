@@ -35,7 +35,7 @@ export default function VisitCounter() {
       <div>
         <div className="counter-label">Visitas al perfil</div>
         <div className="counter-value">
-          {status === "loading" ? "—" : status === "error" ? "Error" : visits}
+          {status === "loading" ? "-" : status === "error" ? "Error" : visits}
         </div>
         <div className="counter-note">
           {status === "success" ? "Visitas registradas" : "Conectar a API para activar"}

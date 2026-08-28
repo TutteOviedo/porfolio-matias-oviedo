@@ -9,7 +9,7 @@
 // correspondiente. Dos caminos típicos:
 //
 //  A) Bedrock (100% dentro de AWS, no necesita guardar una API key de
-//     terceros — solo permisos IAM en el rol del Lambda):
+//     terceros - solo permisos IAM en el rol del Lambda):
 //       import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
 //       const bedrock = new BedrockRuntimeClient({ region: "us-east-1" });
 //
@@ -18,7 +18,7 @@
 //       import Anthropic from "@anthropic-ai/sdk";
 //       const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-// ACA REEMPLAZAR: system prompt real de Tute — quién es Matías, qué puede
+// ACA REEMPLAZAR: system prompt real de Tute - quién es Matías, qué puede
 // contar Tute, y sobre todo qué NO puede responder (para que ahí dispare la
 // respuesta tipo "Mati no me deja responder sobre eso" que definieron al
 // principio).
@@ -49,7 +49,7 @@ async function checkRateLimit(clientIp) {
   // 1) leer (o crear) un item en DynamoDB con key = clientIp
   // 2) si superó MAX_MESSAGES_PER_WINDOW en la ventana de tiempo, devolver false
   // 3) si no, incrementar el contador y devolver true
-  return true; // por ahora no bloquea a nadie — reemplazar antes de producción
+  return true; // por ahora no bloquea a nadie - reemplazar antes de producción
 }
 
 // CORS: ACA REEMPLAZAR "*" por tu dominio real (https://matiasoviedo.com.ar)
@@ -104,7 +104,7 @@ export const handler = async (event) => {
     // const reply = response.content[0].text;
 
     const reply =
-      "ACA REEMPLAZAR: esta es una respuesta de ejemplo — todavía no está" +
+      "ACA REEMPLAZAR: esta es una respuesta de ejemplo - todavía no está" +
       " conectado el modelo de IA real.";
 
     return {

@@ -9,7 +9,7 @@ type LanguageContextValue = {
   // Traduce una entrada del diccionario al idioma activo. Si el idioma es
   // "en" pero la entrada no tiene traducción, devuelve el texto en español
   // (ver translate() en lib/i18n/dictionary). Así una página sin traducir
-  // — /evals hoy — sigue mostrando su contenido en vez de romper.
+  // - /evals hoy - sigue mostrando su contenido en vez de romper.
   t: (entry: Entry) => string;
 };
 

@@ -10,7 +10,7 @@ import { dictionary } from "@/lib/i18n/dictionary";
 export default function Header() {
   const isHome = usePathname() === "/";
   // Header se reusa en páginas que no son el home (ej. /evals), donde estas
-  // secciones no existen en la página actual — ahí los links tienen que
+  // secciones no existen en la página actual - ahí los links tienen que
   // volver a "/" primero en vez de ser anchors relativos.
   const hash = (id: string) => (isHome ? `#${id}` : `/#${id}`);
   const { t } = useLanguage();

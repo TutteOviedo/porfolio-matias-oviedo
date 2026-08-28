@@ -1,6 +1,6 @@
 /*
   Estilos globales del portfolio.
-  Tokens de color/tipografía en :root y [data-theme="dark"] — cambiá los
+  Tokens de color/tipografía en :root y [data-theme="dark"] - cambiá los
   valores acá si en algún momento querés ajustar la paleta violeta.
   El atributo data-theme lo pisa ThemeToggle.tsx en runtime.
 */
