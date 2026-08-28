@@ -117,6 +117,9 @@ está detrás de **Basic Auth**, implementado con una **CloudFront Function**
 (viewer-request) sobre la distribución. Esa función no está en este repo (es
 configuración de infra en AWS); el sitio local y el build no tienen esa capa.
 
+Como refuerzo, `public/robots.txt` bloquea toda la indexación (`Disallow: /`).
+Hay que actualizarlo cuando se saque el Basic Auth.
+
 ## Qué falta completar
 
 Buscá `ACA REEMPLAZAR` en el código. Lo que sigue pendiente hoy:
@@ -157,6 +160,7 @@ app/
   page.tsx                /  -> <HomeClient />
   globals.css             tokens de color/tipografía + estilos del sitio y del widget
   not-found.tsx           404 (sin Header/Footer/widget)
+  favicon.ico / icon.png / apple-icon.png   íconos del sitio (Next los detecta por convención)
   curriculum/
     layout.tsx            fuentes propias + Bootstrap/Font Awesome, solo en esta ruta
     page.tsx              /curriculum -> <CvPage />
@@ -187,8 +191,10 @@ lib/
 
 public/
   og-image.png
+  robots.txt              bloquea toda la indexación mientras el sitio esté con Basic Auth;
+                          hay que aflojar las reglas cuando se saque esa capa
   tute/                   avatar de Tute (idle/talking/thinking, head/full)
-  curriculum/             cv-matias-oviedo.pdf, favicon, apple-touch-icon
+  curriculum/             cv-matias-oviedo.pdf
 
 aws/lambda/tute-handler/  esqueleto del Lambda del chat (se despliega aparte)
 .github/workflows/deploy.yml   build + deploy a S3 + invalidación de CloudFront

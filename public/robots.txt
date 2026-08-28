@@ -1,0 +1,7 @@
+# El sitio esta detras de Basic Auth mientras se integra el backend de Tute.
+# Hasta que se saque esa capa, bloqueamos la indexacion por completo.
+#
+# ACA REEMPLAZAR: cuando se quite el Basic Auth, actualizar estas reglas
+# (permitir "/", y decidir que hacer con /evals si sigue siendo interno).
+User-agent: *
+Disallow: /
