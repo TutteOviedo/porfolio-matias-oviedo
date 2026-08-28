@@ -65,15 +65,18 @@
   border-color: var(--primary);
 }
 
-/* ============ THEME TOGGLE ============ */
-/* El botón en sí es el <ThemeToggle> compartido (clase .theme-toggle de
-   globals.css) - mismo ícono ◐/◑ y label que en el resto del sitio. Acá
-   solo lo posicionamos fijo arriba a la derecha, espejando .cv-back-link. */
-.cv-page .cv-theme-toggle {
+/* ============ TOGGLES (idioma + tema) ============ */
+/* Son los mismos <LanguageToggle> y <ThemeToggle> compartidos del resto del
+   sitio (clase .theme-toggle de globals.css, misma píldora). Acá solo los
+   agrupamos y los fijamos arriba a la derecha, espejando .cv-back-link. */
+.cv-page .cv-corner-toggles {
   position: fixed;
   top: 1.2rem;
   right: 1.4rem;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 /* ============ HEADER ============ */
@@ -387,4 +390,13 @@
 
 @media (max-width: 768px) {
   .cv-page .counter-bar { max-width: 100%; }
+}
+
+/* En pantallas angostas los tres botones fijos (volver + idioma + tema) no
+   entran en una fila: el selector de idioma queda solo con la bandera y el
+   caret, sin la palabra, para no pisar el link "volver al portfolio". */
+@media (max-width: 560px) {
+  .cv-page .cv-corner-toggles { gap: 0.4rem; }
+  .cv-page .cv-corner-toggles .lang-toggle > span { display: none; }
+  .cv-page .cv-corner-toggles .lang-toggle { padding: 6px 8px; }
 }

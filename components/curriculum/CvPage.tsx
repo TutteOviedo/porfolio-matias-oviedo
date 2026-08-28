@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/components/LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
 import CvHeader from "./CvHeader";
 import Experience from "./Experience";
 import Certifications from "./Certifications";
@@ -11,15 +14,18 @@ import ProjectsSidebar from "./ProjectsSidebar";
 import CvFooter from "./CvFooter";
 
 export default function CvPage() {
+  const { t } = useLanguage();
+
   return (
     <div className="cv-page">
       <Link href="/" className="cv-back-link">
-        ← Volver al portfolio
+        {t(dictionary.curriculum.header.backToPortfolio)}
       </Link>
-      {/* El mismo <ThemeToggle> que usa el resto del sitio (mismo ícono ◐/◑,
-          mismo label, mismo estado data-theme). Acá solo lo posicionamos
-          fijo arriba a la derecha, espejando el link "volver". */}
-      <div className="cv-theme-toggle">
+      {/* Mismos LanguageToggle y ThemeToggle del resto del sitio (mismo estado
+          global de idioma y tema). Acá solo los agrupamos y los fijamos
+          arriba a la derecha, espejando el link "volver". */}
+      <div className="cv-corner-toggles">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
 

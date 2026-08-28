@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
 import VisitCounter from "./VisitCounter";
 
 const FIRST_NAME = "Matías ";
@@ -9,6 +11,8 @@ const LAST_NAME = "Oviedo";
 const FULL_NAME = FIRST_NAME + LAST_NAME;
 
 export default function CvHeader() {
+  const { t } = useLanguage();
+  const d = dictionary.curriculum.header;
   const [typedCount, setTypedCount] = useState(0);
 
   useEffect(() => {
@@ -37,7 +41,7 @@ export default function CvHeader() {
           </span>
           <span className={`tw-cursor${done ? " done" : ""}`}>|</span>
         </div>
-        <div className="role-tag">// Application Support Engineer · Buenos Aires, AR</div>
+        <div className="role-tag">{t(d.roleTag)}</div>
         <div className="contact-row">
           <a href="mailto:oviedo.matias.d@gmail.com">
             <i className="fa-solid fa-envelope"></i> oviedo.matias.d@gmail.com
@@ -61,7 +65,7 @@ export default function CvHeader() {
         className="cv-download-btn fade-up delay-3"
       >
         <Download size={13} />
-        Descargar CV
+        {t(d.downloadCv)}
       </a>
     </>
   );

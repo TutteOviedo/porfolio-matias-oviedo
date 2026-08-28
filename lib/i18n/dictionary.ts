@@ -195,6 +195,241 @@ export const dictionary = {
     },
     cvLink: { es: "Ver mi CV", en: "View my resume" },
   },
+
+  // ============================================================ /curriculum
+  // El CV se organiza por sub-área. Las tarjetas que se repiten (experiencia,
+  // educación, certificaciones, proyectos) van como arrays de objetos con
+  // hojas { es, en }, para que agregar/quitar una entrada sea un solo bloque.
+  curriculum: {
+    header: {
+      roleTag: {
+        es: "// Application Support Engineer · Buenos Aires, AR",
+        en: "// Application Support Engineer · Buenos Aires, AR",
+      },
+      downloadCv: { es: "Descargar CV", en: "Download resume" },
+      backToPortfolio: { es: "← Volver al portfolio", en: "← Back to portfolio" },
+      visitsLabel: { es: "Visitas al perfil", en: "Profile visits" },
+      visitsLoading: { es: "Cargando...", en: "Loading..." },
+      visitsRecorded: { es: "Visitas registradas", en: "Visits recorded" },
+      // Se muestra solo cuando el fetch del contador falla de verdad.
+      visitsConnect: {
+        es: "Conectar a API para activar",
+        en: "Connect an API to enable",
+      },
+      visitsError: { es: "Error", en: "Error" },
+    },
+
+    experience: {
+      label: { es: "Experiencia", en: "Experience" },
+      jobs: [
+        {
+          title: {
+            es: "Application Support Engineer",
+            en: "Application Support Engineer",
+          },
+          company: {
+            es: "Consultores en Desarrollos Tecnológicos S.A. - Tiempo completo",
+            en: "Consultores en Desarrollos Tecnológicos S.A. - Full-time",
+          },
+          period: {
+            es: "Jun 2022 - Presente · 3 años 9 meses",
+            en: "Jun 2022 - Present · 3 years 9 months",
+          },
+          desc: {
+            es: "Especialista en soporte técnico y funcional para aplicaciones críticas, gestionando el ciclo completo de vida de incidencias a través de Invgate bajo estrictos acuerdos de nivel de servicio (SLA). Realizo diagnósticos técnicos, ejecución de pruebas funcionales y documentación de procesos, actuando como el principal punto de resolución para problemas complejos y garantizando la continuidad operativa del negocio mediante soporte evolutivo y preventivo.",
+            en: "Technical and functional support specialist for critical applications, managing the full incident lifecycle through Invgate under strict service level agreements (SLAs). I run technical diagnostics, execute functional testing and document processes, acting as the main point of resolution for complex problems and safeguarding business continuity through adaptive and preventive support.",
+          },
+          tags: [
+            { es: "SQL", en: "SQL" },
+            { es: "Invgate", en: "Invgate" },
+            { es: "Azure DevOps", en: "Azure DevOps" },
+            { es: "Troubleshooting", en: "Troubleshooting" },
+            { es: "Postman", en: "Postman" },
+          ],
+        },
+        {
+          title: {
+            es: "Implementation Consultant",
+            en: "Implementation Consultant",
+          },
+          company: {
+            es: "NovaRed S.A. · Tiempo completo",
+            en: "NovaRed S.A. · Full-time",
+          },
+          period: {
+            es: "Ene 2021 - Jun 2022 · 1 año 6 meses",
+            en: "Jan 2021 - Jun 2022 · 1 year 6 months",
+          },
+          desc: {
+            es: "Participé activamente en la implementación y parametrización de la plataforma RSA Archer (GRC) para entidades del sector bancario. Trabajé como nexo técnico-funcional, encargándome del relevamiento de requerimientos, la negociación de alcances y la configuración del sistema para la gestión de KPIs y documentación normativa, asegurando soluciones alineadas a las necesidades del cliente.",
+            en: "Took an active part in implementing and configuring the RSA Archer (GRC) platform for banking-sector organizations. Worked as the technical-functional liaison, handling requirements gathering, scope negotiation and system configuration for KPI management and regulatory documentation, ensuring solutions aligned with client needs.",
+          },
+          tags: [
+            { es: "GRC", en: "GRC" },
+            { es: "Análisis de Requerimientos", en: "Requirements Analysis" },
+            { es: "Troubleshooting", en: "Troubleshooting" },
+            { es: "Parametrización", en: "Configuration" },
+            { es: "Sector Bancario", en: "Banking Sector" },
+          ],
+        },
+      ],
+    },
+
+    certifications: {
+      label: { es: "Certificaciones", en: "Certifications" },
+      items: [
+        {
+          title: {
+            es: "AWS Certified Solutions Architect – Associate (En curso)",
+            en: "AWS Certified Solutions Architect – Associate (In progress)",
+          },
+          issuer: {
+            es: "Amazon Web Services (AWS)",
+            en: "Amazon Web Services (AWS)",
+          },
+          period: { es: "Dic 2026", en: "Dec 2026" },
+          desc: {
+            es: "Formación enfocada en el diseño de soluciones resilientes, de alto rendimiento y costo-eficientes en la nube de AWS. Incluye el despliegue de arquitecturas multi-capa, gestión de servicios de cómputo, almacenamiento, bases de datos y estrategias avanzadas de seguridad y red.",
+            en: "Training focused on designing resilient, high-performance and cost-efficient solutions on AWS. Covers deploying multi-tier architectures, managing compute, storage and database services, and advanced security and networking strategies.",
+          },
+        },
+      ],
+    },
+
+    education: {
+      label: { es: "Educación", en: "Education" },
+      items: [
+        {
+          title: { es: "Data Science", en: "Data Science" },
+          institution: {
+            es: "UTN.BA - Centro de e-Learning",
+            en: "UTN.BA - e-Learning Center",
+          },
+          period: { es: "Ene 2025 - Mar 2025", en: "Jan 2025 - Mar 2025" },
+          desc: {
+            es: "Formación especializada en la extracción, limpieza y análisis estadístico de grandes volúmenes de datos para la generación de insights estratégicos. Incluye el desarrollo de modelos predictivos utilizando Python, manejo de librerías de Machine Learning y visualización de datos complejos para facilitar la toma de decisiones basada en evidencia.",
+            en: "Specialized training in extracting, cleaning and statistically analyzing large data volumes to produce strategic insights. Covers building predictive models with Python, working with Machine Learning libraries, and visualizing complex data to support evidence-based decision-making.",
+          },
+        },
+        {
+          title: { es: "Javascript", en: "JavaScript" },
+          institution: { es: "Coderhouse", en: "Coderhouse" },
+          period: { es: "Nov 2023 - Ene 2024", en: "Nov 2023 - Jan 2024" },
+          desc: {
+            es: "Especialización en programación funcional y lógica de desarrollo con JavaScript (ES6+). Implementación de interactividad avanzada, manipulación del DOM y consumo de APIs externas para la creación de aplicaciones web dinámicas y escalables.",
+            en: "Specialization in functional programming and development logic with JavaScript (ES6+). Building advanced interactivity, DOM manipulation and consumption of external APIs to create dynamic, scalable web applications.",
+          },
+        },
+        {
+          title: { es: "Desarrollo Web", en: "Web Development" },
+          institution: { es: "Coderhouse", en: "Coderhouse" },
+          period: { es: "Sep 2023 - Nov 2023", en: "Sep 2023 - Nov 2023" },
+          desc: {
+            es: "Capacitación en la creación de sitios web profesionales utilizando HTML y CSS. Enfoque en diseño responsivo, optimización de rendimiento y buenas prácticas de maquetación para garantizar una excelente experiencia de usuario en cualquier dispositivo.",
+            en: "Training in building professional websites with HTML and CSS. Focus on responsive design, performance optimization and solid markup practices to ensure an excellent user experience on any device.",
+          },
+        },
+        {
+          title: { es: "Técnico en Informática", en: "Computer Technician" },
+          institution: {
+            es: "Instituto Técnico Dr. Emilio Lamarca",
+            en: "Instituto Técnico Dr. Emilio Lamarca",
+          },
+          period: { es: "2012 - 2015", en: "2012 - 2015" },
+          desc: {
+            es: "Secundario técnico con orientación en informática.",
+            en: "Technical secondary school with a specialization in computing.",
+          },
+        },
+      ],
+    },
+
+    skills: {
+      skillsLabel: { es: "Habilidades", en: "Skills" },
+      languagesLabel: { es: "Idiomas", en: "Languages" },
+      methodologiesLabel: { es: "Metodologías", en: "Methodologies" },
+      items: [
+        { es: "Troubleshooting", en: "Troubleshooting" },
+        { es: "SQL", en: "SQL" },
+        { es: "Scripting & Logic", en: "Scripting & Logic" },
+        { es: "API Testing", en: "API Testing" },
+        { es: "AWS", en: "AWS" },
+        { es: "IA", en: "AI" },
+      ],
+      languages: [
+        { es: "Español", en: "Spanish" },
+        { es: "Inglés", en: "English" },
+      ],
+      methodologies: [
+        { es: "Agile / Scrum", en: "Agile / Scrum" },
+        { es: "SLA Management", en: "SLA Management" },
+        { es: "Root Cause Analysis (RCA)", en: "Root Cause Analysis (RCA)" },
+        { es: "Technical Documentation", en: "Technical Documentation" },
+        { es: "ITIL Foundations", en: "ITIL Foundations" },
+      ],
+    },
+
+    projects: {
+      label: { es: "Proyectos", en: "Projects" },
+      githubLink: { es: "Ver en GitHub ↗", en: "View on GitHub ↗" },
+      items: [
+        {
+          title: {
+            es: "Cloud Resume Challenge (AWS | DevOps)",
+            en: "Cloud Resume Challenge (AWS | DevOps)",
+          },
+          period: { es: "2026", en: "2026" },
+          desc: {
+            es: "Despliegue de una infraestructura Serverless en AWS para hostear un portfolio profesional. Implementación de CI/CD mediante GitHub Actions, almacenamiento en S3, seguridad con CloudFront y un contador de visitas dinámico utilizando API Gateway, Lambda y DynamoDB.",
+            en: "Deployment of a serverless AWS infrastructure to host a professional portfolio. CI/CD with GitHub Actions, S3 storage, CloudFront for security, and a dynamic visit counter built with API Gateway, Lambda and DynamoDB.",
+          },
+          tags: [
+            { es: "AWS S3", en: "AWS S3" },
+            { es: "Serverless", en: "Serverless" },
+            { es: "CI/CD", en: "CI/CD" },
+            { es: "API Gateway", en: "API Gateway" },
+            { es: "AWS Lambda & DynamoDB", en: "AWS Lambda & DynamoDB" },
+          ],
+        },
+        {
+          title: { es: "Tute (Agente de IA)", en: "Tute (AI Agent)" },
+          period: { es: "2026", en: "2026" },
+          desc: {
+            es: "Agente conversacional embebido en este mismo portfolio. RAG sobre una base de conocimiento propia y tool use, todo armado a mano sin frameworks de agentes. Hoy corre en modo demo con respuestas simuladas; el backend serverless (API Gateway + Lambda) está en integración.",
+            en: "Conversational agent embedded in this portfolio. RAG over a custom knowledge base plus tool use, all built by hand without agent frameworks. It currently runs in demo mode with simulated responses; the serverless backend (API Gateway + Lambda) is being integrated.",
+          },
+          tags: [
+            { es: "IA", en: "AI" },
+            { es: "RAG", en: "RAG" },
+            { es: "Tool use", en: "Tool use" },
+            { es: "AWS Lambda", en: "AWS Lambda" },
+            { es: "API Gateway", en: "API Gateway" },
+          ],
+        },
+        {
+          title: {
+            es: "JobFit (IA | Multi-agente)",
+            en: "JobFit (AI | Multi-agent)",
+          },
+          period: { es: "En desarrollo", en: "In development" },
+          desc: {
+            es: "Sistema multi-agente que analiza una oferta laboral: un researcher busca contexto de la empresa, un analyst lo cruza con mi perfil real, y un writer arma una carta y un CV optimizado para ATS. Orquestado con LangGraph, corre local.",
+            en: "Multi-agent system that analyzes a job posting: a researcher gathers context on the company, an analyst cross-references it with my real profile, and a writer produces a cover letter and an ATS-optimized resume. Orchestrated with LangGraph, runs locally.",
+          },
+          tags: [
+            { es: "IA", en: "AI" },
+            { es: "Multi-agente", en: "Multi-agent" },
+            { es: "LangGraph", en: "LangGraph" },
+            { es: "Python", en: "Python" },
+          ],
+        },
+      ],
+    },
+
+    footer: {
+      copyright: { es: "© 2026 Matías Oviedo", en: "© 2026 Matías Oviedo" },
+    },
+  },
 } as const;
 
 export type Dictionary = typeof dictionary;
