@@ -29,7 +29,7 @@ export default function CvHeader() {
               .map((char, i) => (
                 <span
                   key={i}
-                  style={{ color: i >= FIRST_NAME.length ? "var(--accent)" : "var(--text)" }}
+                  style={{ color: i >= FIRST_NAME.length ? "var(--primary)" : "var(--text)" }}
                 >
                   {char}
                 </span>

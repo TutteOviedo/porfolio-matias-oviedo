@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { TuteProvider } from "@/components/TuteProvider";
+import { LanguageProvider } from "@/components/LanguageProvider";
 
 const TITLE = "Matías Oviedo — Soporte, Programación & IA";
 const DESCRIPTION =
@@ -37,7 +38,9 @@ export default function RootLayout({
     // para que no haya parpadeo raro en el primer render del server.
     <html lang="es" data-theme="light">
       <body>
-        <TuteProvider>{children}</TuteProvider>
+        <LanguageProvider>
+          <TuteProvider>{children}</TuteProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

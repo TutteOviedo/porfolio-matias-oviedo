@@ -1,36 +1,41 @@
+"use client";
+
+import { useLanguage } from "./LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
+
 export default function Hero() {
+  const { t } = useLanguage();
+  const d = dictionary.hero;
+
   return (
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
           <div className="logline">
             <span className="dot"></span>
-            disponible_para_roles: IA · agentes · soporte de aplicaciones
+            {t(d.eyebrow)}
           </div>
           <h1>
-            6 años haciendo
+            {t(d.titleLine1)}
             <br />
-            soporte.
+            {t(d.titleLine2)}
             <br />
-            Ahora, resuelvo problemas <span>reales con agentes de IA</span>.
+            {t(d.titleLine3Lead)}
+            <span>{t(d.titleAccent)}</span>.
           </h1>
-          <p className="lead">
-            Soy Matías Oviedo. Hago soporte de aplicaciones webs y mobiles, poco a poco fui
-            metiéndome en programación, entornos cloud (AWS) e inteligencia artificial a modo de hobbie —
-            hoy diseño y testeo sistemas que automatizan lo que antes hacía a mano.
-          </p>
+          <p className="lead">{t(d.lead)}</p>
           <div className="stat-row">
             <div className="stat">
-              <b>6</b>
-              <span>años en soporte</span>
+              <b>{t(d.stat1Value)}</b>
+              <span>{t(d.stat1Label)}</span>
             </div>
             <div className="stat">
-              <b>AWS</b>
-              <span>cloud &amp; serverless</span>
+              <b>{t(d.stat2Value)}</b>
+              <span>{t(d.stat2Label)}</span>
             </div>
             <div className="stat">
-              <b>IA</b>
-              <span>agentes &amp; tool use</span>
+              <b>{t(d.stat3Value)}</b>
+              <span>{t(d.stat3Label)}</span>
             </div>
           </div>
         </div>

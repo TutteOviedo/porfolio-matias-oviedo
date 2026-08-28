@@ -11,7 +11,7 @@ export default function Certifications() {
               AWS Certified Solutions Architect – Associate (En curso)
             </div>
             <div className="card-company">Amazon Web Services (AWS)</div>
-            <div className="card-period">Ago 2026</div>
+            <div className="card-period">Dic 2026</div>
             <p className="card-desc mb-0">
               Formación enfocada en el diseño de soluciones resilientes, de alto rendimiento y
               costo-eficientes en la nube de AWS. Incluye el despliegue de arquitecturas

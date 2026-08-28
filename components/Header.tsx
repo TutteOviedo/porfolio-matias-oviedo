@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
-import { useTute } from "./TuteProvider";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "./LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
 
 export default function Header() {
   const isHome = usePathname() === "/";
@@ -11,7 +13,8 @@ export default function Header() {
   // secciones no existen en la página actual — ahí los links tienen que
   // volver a "/" primero en vez de ser anchors relativos.
   const hash = (id: string) => (isHome ? `#${id}` : `/#${id}`);
-  const openTute = useTute();
+  const { t } = useLanguage();
+  const d = dictionary.nav;
 
   return (
     <header>
@@ -21,21 +24,12 @@ export default function Header() {
           <span className="cursor"></span>
         </div>
         <div className="nav-links">
-          <Link href={hash("sobre-mi")}>Sobre mí</Link>
-          <a
-            href={hash("tute")}
-            onClick={(e) => {
-              // El widget es global ahora, así que abrirlo no depende de
-              // estar en el home — no hace falta navegar a ningún lado.
-              e.preventDefault();
-              openTute();
-            }}
-          >
-            Tute
-          </a>
-          <Link href={hash("proyectos")}>Proyectos</Link>
-          <Link href={hash("skills")}>Skills</Link>
-          <Link href={hash("contacto")}>Contacto</Link>
+          <Link href={hash("sobre-mi")}>{t(d.about)}</Link>
+          <Link href={hash("tute")}>{t(d.tute)}</Link>
+          <Link href={hash("proyectos")}>{t(d.projects)}</Link>
+          <Link href={hash("skills")}>{t(d.skills)}</Link>
+          <Link href={hash("contacto")}>{t(d.contact)}</Link>
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </nav>

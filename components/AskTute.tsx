@@ -2,9 +2,13 @@
 
 import Link from "next/link";
 import { useTute } from "./TuteProvider";
+import { useLanguage } from "./LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
 
 export default function AskTute() {
   const openTute = useTute();
+  const { t } = useLanguage();
+  const d = dictionary.askTute;
 
   return (
     <section id="tute">
@@ -13,34 +17,30 @@ export default function AskTute() {
           <div className="section-head">
             <div className="logline">
               <span className="dot"></span>
-              tute.status: online
+              {t(d.eyebrow)}
             </div>
-            <h2>Conocé a Tute</h2>
-            <p>
-              Es mi agente de IA. Me conoce bastante y te puede contar lo que quieras saber de mí. Preguntale sobre:
-
-
-            </p>
+            <h2>{t(d.heading)}</h2>
+            <p>{t(d.intro)}</p>
           </div>
           <div className="ask-grid">
             <div className="ask-card">
               <span className="emoji">🙋</span>
-              <h4>Info profesional o personal</h4>
-              <p>Mi experiencia laboral, mi stack, o cosas más generales sobre mí.</p>
+              <h4>{t(d.card1Title)}</h4>
+              <p>{t(d.card1Body)}</p>
             </div>
             <div className="ask-card">
               <span className="emoji">🗂️</span>
-              <h4>Detalles de mis proyectos</h4>
-              <p>Qué hice, con qué tecnologías, y por qué lo armé así.</p>
+              <h4>{t(d.card2Title)}</h4>
+              <p>{t(d.card2Body)}</p>
             </div>
             <Link href="/evals" className="ask-card">
               <span className="emoji">🧩</span>
-              <h4>Cómo está hecho Tute</h4>
-              <p>Te lleva directo a la sección donde explico como lo construí y como lo testeo.</p>
+              <h4>{t(d.card3Title)}</h4>
+              <p>{t(d.card3Body)}</p>
             </Link>
           </div>
           <button className="btn btn-primary" onClick={openTute}>
-            ¡Preguntale! 
+            {t(d.cta)}
           </button>
         </div>
         <div className="orb-wrap">

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import CvThemeToggle from "./CvThemeToggle";
+import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 import CvHeader from "./CvHeader";
 import Experience from "./Experience";
 import Certifications from "./Certifications";
@@ -10,29 +10,18 @@ import SkillsSidebar from "./SkillsSidebar";
 import ProjectsSidebar from "./ProjectsSidebar";
 import CvFooter from "./CvFooter";
 
-type CvTheme = "dark" | "light";
-
 export default function CvPage() {
-  // Tema propio del CV, independiente del ThemeToggle del resto del sitio:
-  // key de localStorage distinta ("cv-theme") y la clase "light" se aplica
-  // sobre este wrapper, no sobre <body>/<html> (que persisten entre
-  // navegaciones client-side del App Router).
-  const [theme, setTheme] = useState<CvTheme>("dark");
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("cv-theme") as CvTheme | null;
-    if (saved) setTheme(saved);
-  }, []);
-
-  function toggleTheme() {
-    const next: CvTheme = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    window.localStorage.setItem("cv-theme", next);
-  }
-
   return (
-    <div className={`cv-page${theme === "light" ? " light" : ""}`}>
-      <CvThemeToggle theme={theme} onToggle={toggleTheme} />
+    <div className="cv-page">
+      <Link href="/" className="cv-back-link">
+        ← Volver al portfolio
+      </Link>
+      {/* El mismo <ThemeToggle> que usa el resto del sitio (mismo ícono ◐/◑,
+          mismo label, mismo estado data-theme). Acá solo lo posicionamos
+          fijo arriba a la derecha, espejando el link "volver". */}
+      <div className="cv-theme-toggle">
+        <ThemeToggle />
+      </div>
 
       <header className="cv-header">
         <div className="container">

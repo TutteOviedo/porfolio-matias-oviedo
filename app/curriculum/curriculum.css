@@ -1,22 +1,21 @@
 /*
   Estilos del CV (Cloud Resume Challenge), portados desde el HTML/CSS plano
-  original. Todo queda escopeado bajo .cv-page para que ni los tokens de
-  color (--bg, --text, --accent, etc.) ni las clases (.tag, .card-title...)
-  choquen con globals.css del resto del portfolio, que usa varios de esos
-  mismos nombres.
+  original.
+
+  Los COLORES ya NO se definen acá: la página usa exactamente el mismo sistema
+  de tema que el resto del portfolio — los tokens --bg / --surface / --text /
+  --primary / --accent / --border de globals.css, que cambian según
+  data-theme en <html>. Por eso el widget de Tute y el CV siempre están en el
+  mismo tema, y un solo toggle controla los dos.
+
+  Lo único que esta capa aporta es lo PROPIO de la página: su tipografía
+  (Playfair Display / IBM Plex) y su espaciado. Nada de esto toca las
+  variables de color compartidas. Todo queda escopeado bajo .cv-page para que
+  las clases (.tag, .card-title...) no choquen con globals.css.
 */
 
-/* ============ TOKENS (dark = default, igual que el original) ============ */
+/* ============ TIPOGRAFÍA / LAYOUT PROPIOS DE LA PÁGINA ============ */
 .cv-page {
-  --bg: #130f1e;
-  --surface: #1d1730;
-  --surface2: #271f3d;
-  --border: #332a4d;
-  --accent: #a385f0;
-  --accent2: #e8b36b;
-  --text: #f3effa;
-  --muted: #a79bc2;
-
   --heading-font: var(--font-playfair), Georgia, serif;
   --mono: var(--font-plex-mono), monospace;
   --body-font: var(--font-plex-sans), sans-serif;
@@ -30,18 +29,6 @@
   position: relative;
 }
 
-.cv-page.light {
-  --bg: #faf8fc;
-  --surface: #f1ecf9;
-  --surface2: #e8e0f5;
-  --border: #ddd3ef;
-  --accent: #6c4ab6;
-  --accent2: #c98a3e;
-  --text: #211a2e;
-  --muted: #665c7d;
-}
-.cv-page.light footer { background: var(--surface2); color: var(--muted); }
-
 .cv-page *,
 .cv-page *::before,
 .cv-page *::after {
@@ -49,32 +36,45 @@
   transition: background-color 0.35s ease, border-color 0.35s ease, color 0.2s ease;
 }
 
-/* ============ THEME TOGGLE BUTTON ============ */
-.cv-page #theme-toggle {
+/* ============ VOLVER AL PORTFOLIO ============ */
+/* Píldora fija arriba a la izquierda, espejando el toggle de tema del otro
+   lado y con su mismo estilo visual: fondo opaco (var(--surface-2)), borde,
+   esquinas redondeadas y el mismo padding. El fondo sólido es lo que hace
+   que, al scrollear, tape el contenido de abajo limpiamente en vez de
+   mezclarse con él. Color sutil (--text-muted -> --primary en hover). */
+.cv-page .cv-back-link {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.4rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.cv-page .cv-back-link:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ============ THEME TOGGLE ============ */
+/* El botón en sí es el <ThemeToggle> compartido (clase .theme-toggle de
+   globals.css) — mismo ícono ◐/◑ y label que en el resto del sitio. Acá
+   solo lo posicionamos fijo arriba a la derecha, espejando .cv-back-link. */
+.cv-page .cv-theme-toggle {
   position: fixed;
   top: 1.2rem;
   right: 1.4rem;
   z-index: 1000;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 0.45rem 1rem;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.2s;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
-.cv-page #theme-toggle:hover {
-  border-color: var(--accent);
-  box-shadow: 0 2px 16px color-mix(in srgb, var(--accent) 20%, transparent);
-}
-.cv-page #theme-toggle .toggle-icon { font-size: 1rem; transition: transform 0.4s; }
-.cv-page #theme-toggle:hover .toggle-icon { transform: rotate(20deg); }
 
 /* ============ HEADER ============ */
 .cv-page .cv-header {
@@ -88,7 +88,7 @@
   position: absolute;
   top: -80px; right: -120px;
   width: 480px; height: 480px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 8%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 8%, transparent) 0%, transparent 70%);
   pointer-events: none;
 }
 .cv-page .cv-header::after {
@@ -96,7 +96,7 @@
   position: absolute;
   bottom: -60px; left: -80px;
   width: 320px; height: 320px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 7%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -113,7 +113,7 @@
   font-family: var(--mono);
   font-size: 0.85rem;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--primary);
   text-transform: uppercase;
   margin-top: 0.75rem;
 }
@@ -121,23 +121,23 @@
 .cv-page .contact-row {
   font-family: var(--mono);
   font-size: 0.78rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
 .cv-page .contact-row a {
-  color: var(--muted);
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
-.cv-page .contact-row a:hover { color: var(--accent); }
+.cv-page .contact-row a:hover { color: var(--primary); }
 .cv-page .contact-row .dot { color: var(--border); }
 
 /* ============ VISITOR COUNTER ============ */
 .cv-page .counter-bar {
-  background: var(--surface2);
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.2rem 1.8rem;
@@ -150,19 +150,19 @@
 }
 .cv-page .counter-bar .pulse {
   width: 10px; height: 10px;
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 50%;
   flex-shrink: 0;
   animation: cvPulse 2s infinite;
 }
 @keyframes cvPulse {
-  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
-  50%       { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 0%, transparent); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 50%, transparent); }
+  50%       { box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 0%, transparent); }
 }
 .cv-page .counter-label {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   line-height: 1.3;
@@ -171,12 +171,12 @@
   font-family: var(--mono);
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--primary);
   line-height: 1;
 }
 .cv-page .counter-note {
   font-size: 0.68rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-top: 0.25rem;
 }
 
@@ -188,8 +188,8 @@
   margin-top: 0.9rem;
   padding: 0.45rem 0.9rem;
   background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--primary);
+  color: var(--primary);
   border-radius: 8px;
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -199,7 +199,7 @@
   transition: background 0.2s, transform 0.2s;
 }
 .cv-page .cv-download-btn:hover {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
   transform: translateY(-1px);
 }
 .cv-page .cv-download-btn svg {
@@ -217,7 +217,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -241,7 +241,7 @@
   transition: border-color 0.25s, transform 0.25s;
 }
 .cv-page .cv-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 30%, transparent);
   transform: translateX(4px);
 }
 .cv-page .cv-card::before {
@@ -249,7 +249,7 @@
   position: absolute;
   left: 0; top: 20%; bottom: 20%;
   width: 3px;
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 0 3px 3px 0;
   opacity: 0;
   transition: opacity 0.25s;
@@ -266,24 +266,24 @@
 .cv-page .card-company {
   font-family: var(--mono);
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--primary);
   font-weight: 600;
 }
 .cv-page .card-period {
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-bottom: 0.9rem;
 }
 .cv-page .card-desc {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-bottom: 0.9rem;
 }
 .cv-page .card-link {
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.2s;
@@ -295,9 +295,9 @@
 .cv-page .tag {
   font-family: var(--mono);
   font-size: 0.68rem;
-  background: var(--surface2);
+  background: var(--surface-2);
   border: 1px solid var(--border);
-  color: var(--accent);
+  color: var(--primary);
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   letter-spacing: 0.05em;
@@ -331,7 +331,7 @@
 }
 .cv-page .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 99px;
   animation: cvGrowBar 1.2s ease forwards;
   transform-origin: left;
@@ -344,7 +344,7 @@
 /* ============ EDUCATION ICON ============ */
 .cv-page .edu-icon {
   width: 40px; height: 40px;
-  background: var(--surface2);
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
@@ -373,13 +373,13 @@
   padding: 1.5rem 0;
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--text-muted);
   text-align: center;
 }
 
 /* ============ TYPEWRITER ============ */
 .cv-page .tw-cursor {
-  color: var(--accent);
+  color: var(--primary);
 }
 .cv-page .tw-cursor.done {
   opacity: 0;

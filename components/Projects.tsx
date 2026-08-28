@@ -1,45 +1,47 @@
+"use client";
+
+import { useLanguage } from "./LanguageProvider";
+import { dictionary } from "@/lib/i18n/dictionary";
+
 export default function Projects() {
+  const { t } = useLanguage();
+  const d = dictionary.projects;
+
   return (
     <section id="proyectos">
       <div className="wrap">
         <div className="section-head">
           <div className="logline">
             <span className="dot idle"></span>
-            seccion: trabajo hecho
+            {t(d.eyebrow)}
           </div>
-          <h2>Proyectos</h2>
-          <p>Lo que fui construyendo para aprender y para resolver problemas concretos.</p>
+          <h2>{t(d.heading)}</h2>
+          <p>{t(d.intro)}</p>
         </div>
         <div className="project-grid">
           <div className="project-card">
-            <div className="project-tag">AWS · Cloud · Funciona como mi CV</div>
-            <h3>Cloud Resume Challenge</h3>
-            <p>
-              Currículum online con arquitectura 100% serverless: S3, CloudFront,
-              Route53, API Gateway, Lambda y DynamoDB para el contador de visitas.
-            </p>
+            <div className="project-tag">{t(d.cloudResumeTag)}</div>
+            <h3>{t(d.cloudResumeTitle)}</h3>
+            <p>{t(d.cloudResumeDesc)}</p>
             <a href="https://github.com/TutteOviedo/porfolio-matias-oviedo" className="project-link">
-              Ver en GitHub →
+              {t(d.cloudResumeLink)}
             </a>
           </div>
           <div className="project-card">
-            <div className="project-tag">IA · Agentes</div>
-            <h3>Tute</h3>
-            <p>
-              Agente conversacional con tool use real, pensado para responder
-              sobre mi experiencia y demostrar buenas prácticas de diseño de
-              agentes.
-            </p>
+            <div className="project-tag">{t(d.tuteTag)}</div>
+            <h3>{t(d.tuteTitle)}</h3>
+            <p>{t(d.tuteDesc)}</p>
             <a href="#tute" className="project-link">
-              Probarlo acá ↑
+              {t(d.tuteLink)}
             </a>
           </div>
           <div className="project-card">
-            <div className="project-tag">Próximamente</div>
-            <h3>[ Nuevo proyecto ]</h3>
-            <p>Espacio reservado para el próximo proyecto — se va a ir sumando a medida que avance.</p>
+            <div className="project-tag">{t(d.jobfitTag)}</div>
+            <h3>{t(d.jobfitTitle)}</h3>
+            <p>{t(d.jobfitDesc)}</p>
+            {/* ACA REEMPLAZAR: URL real del repo de JobFit una vez creado */}
             <a href="#" className="project-link">
-              Próximamente
+              {t(d.jobfitLink)}
             </a>
           </div>
         </div>
