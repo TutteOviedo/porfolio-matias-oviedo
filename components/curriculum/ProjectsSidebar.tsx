@@ -6,7 +6,7 @@ import { dictionary } from "@/lib/i18n/dictionary";
 // Los links van por índice: siguen el mismo orden que projects.items del
 // diccionario (Cloud Resume Challenge, Tute, JobFit).
 const PROJECT_LINKS = [
-  "https://github.com/TutteOviedo/porfolio-matias-oviedo",
+  "https://github.com/TutteOviedo/portfolio-matias-oviedo",
   // ACA REEMPLAZAR: URL real del repo de Tute
   "#",
   // ACA REEMPLAZAR: URL real del repo de JobFit una vez creado

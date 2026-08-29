@@ -23,7 +23,7 @@ export default function Projects() {
             <div className="project-tag">{t(d.cloudResumeTag)}</div>
             <h3>{t(d.cloudResumeTitle)}</h3>
             <p>{t(d.cloudResumeDesc)}</p>
-            <a href="https://github.com/TutteOviedo/porfolio-matias-oviedo" className="project-link">
+            <a href="https://github.com/TutteOviedo/portfolio-matias-oviedo" className="project-link">
               {t(d.cloudResumeLink)}
             </a>
           </div>
