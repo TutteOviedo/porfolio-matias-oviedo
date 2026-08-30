@@ -39,8 +39,7 @@ export default function Projects() {
             <div className="project-tag">{t(d.jobfitTag)}</div>
             <h3>{t(d.jobfitTitle)}</h3>
             <p>{t(d.jobfitDesc)}</p>
-            {/* ACA REEMPLAZAR: URL real del repo de JobFit una vez creado */}
-            <a href="#" className="project-link">
+            <a href="https://github.com/TutteOviedo/job-fit" className="project-link">
               {t(d.jobfitLink)}
             </a>
           </div>

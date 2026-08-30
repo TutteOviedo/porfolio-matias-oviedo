@@ -153,11 +153,11 @@ export const dictionary = {
     },
     tuteLink: { es: "Probarlo acá ↑", en: "Try it here ↑" },
 
-    jobfitTag: { es: "IA · Multi-agente", en: "AI · Multi-agent" },
+    jobfitTag: { es: "IA · Pipeline", en: "AI · Pipeline" },
     jobfitTitle: { es: "JobFit", en: "JobFit" },
     jobfitDesc: {
-      es: "Sistema multi-agente que analiza una oferta laboral: un researcher busca contexto de la empresa, un analyst cruza esa info con mi perfil real, y un writer arma una carta y un CV optimizado para ATS - orquestado con LangGraph.",
-      en: "Multi-agent system that analyzes a job posting: a researcher gathers context on the company, an analyst cross-references it with my real profile, and a writer produces a cover letter and an ATS-optimized resume - orchestrated with LangGraph.",
+      es: "Sistema que analiza una oferta laboral en 4 pasos: extrae los requisitos, compara mi perfil real contra la oferta, y genera un mensaje para LinkedIn y un CV optimizado para ATS — sin scores ni porcentajes, todo el análisis es cualitativo.",
+      en: "A system that analyzes a job posting in 4 steps: it extracts the requirements, compares my real profile against the posting, and generates a LinkedIn message and an ATS-optimized resume — no scores or percentages, the whole analysis is qualitative.",
     },
     jobfitLink: { es: "Ver en GitHub →", en: "View on GitHub →" },
   },
@@ -408,18 +408,18 @@ export const dictionary = {
         },
         {
           title: {
-            es: "JobFit (IA | Multi-agente)",
-            en: "JobFit (AI | Multi-agent)",
+            es: "JobFit (IA | Pipeline)",
+            en: "JobFit (AI | Pipeline)",
           },
           period: { es: "En desarrollo", en: "In development" },
           desc: {
-            es: "Sistema multi-agente que analiza una oferta laboral: un researcher busca contexto de la empresa, un analyst lo cruza con mi perfil real, y un writer arma una carta y un CV optimizado para ATS. Orquestado con LangGraph, corre local.",
-            en: "Multi-agent system that analyzes a job posting: a researcher gathers context on the company, an analyst cross-references it with my real profile, and a writer produces a cover letter and an ATS-optimized resume. Orchestrated with LangGraph, runs locally.",
+            es: "Sistema que analiza una oferta laboral en 4 pasos: extrae los requisitos, compara mi perfil real contra la oferta, y genera un mensaje para LinkedIn y un CV optimizado para ATS — sin scores ni porcentajes, todo el análisis es cualitativo.",
+            en: "A system that analyzes a job posting in 4 steps: it extracts the requirements, compares my real profile against the posting, and generates a LinkedIn message and an ATS-optimized resume — no scores or percentages, the whole analysis is qualitative.",
           },
           tags: [
             { es: "IA", en: "AI" },
-            { es: "Multi-agente", en: "Multi-agent" },
-            { es: "LangGraph", en: "LangGraph" },
+            { es: "Pipeline", en: "Pipeline" },
+            { es: "ATS", en: "ATS" },
             { es: "Python", en: "Python" },
           ],
         },

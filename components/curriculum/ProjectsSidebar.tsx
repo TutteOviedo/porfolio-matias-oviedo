@@ -9,8 +9,7 @@ const PROJECT_LINKS = [
   "https://github.com/TutteOviedo/portfolio-matias-oviedo",
   // ACA REEMPLAZAR: URL real del repo de Tute
   "#",
-  // ACA REEMPLAZAR: URL real del repo de JobFit una vez creado
-  "#",
+  "https://github.com/TutteOviedo/job-fit",
 ];
 
 export default function ProjectsSidebar() {
