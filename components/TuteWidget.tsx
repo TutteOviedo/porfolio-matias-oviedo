@@ -8,6 +8,8 @@ import {
 } from "react";
 import Link from "next/link";
 import { TUTE_HEAD_IMAGES, TUTE_FULL_IMAGES, TuteState } from "@/lib/tuteImages";
+import { useLanguage } from "./LanguageProvider";
+import { dictionary, Entry } from "@/lib/i18n/dictionary";
 
 export type TuteWidgetHandle = { open: () => void };
 
@@ -17,19 +19,26 @@ type Message = {
   link?: { href: string; label: string };
 };
 
-const INITIAL_MESSAGES: Message[] = [
-  { role: "user", text: "¿Qué hace Matías?" },
-  {
-    role: "tute",
-    text: "Soporte de aplicaciones hace 6 años, y desde ahí sumó programación, AWS e IA. ¿Querés que te cuente de algún proyecto puntual?",
-  },
-  { role: "user", text: "¿Cómo te hicieron a vos?" },
-  {
-    role: "tute",
-    text: "Buena pregunta - te llevo a la explicación completa de cómo me armaron y me testean 👇",
-    link: { href: "/evals", label: "Ver cómo me testean →" },
-  },
-];
+type Translate = (entry: Entry) => string;
+
+// Mensajes precargados que se muestran al abrir el chat: el aviso de "en
+// construcción" y una conversación de ejemplo (modo demo). Se arman con el
+// idioma activo, así el toggle ES/EN también los traduce. Cuando el backend
+// real esté conectado, esto se reduce al historial vacío.
+function buildSeedMessages(t: Translate): Message[] {
+  const d = dictionary.tute;
+  return [
+    { role: "tute", text: t(d.constructionNotice) },
+    { role: "user", text: t(d.demoUserQ1) },
+    { role: "tute", text: t(d.demoTuteA1) },
+    { role: "user", text: t(d.demoUserQ2) },
+    {
+      role: "tute",
+      text: t(d.demoTuteA2),
+      link: { href: "/evals", label: t(d.demoTuteA2Link) },
+    },
+  ];
+}
 
 // ACA REEMPLAZAR: esta es la respuesta de relleno que se usa en "modo demo"
 // (cuando todavía no hay una API real conectada). Cuando el backend esté
@@ -42,9 +51,13 @@ function sleep(ms: number) {
 }
 
 const TuteWidget = forwardRef<TuteWidgetHandle>(function TuteWidget(_, ref) {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [tuteState, setTuteState] = useState<TuteState>("idle");
-  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
+  // Solo el historial que se va agregando (respuesta de demo, mensajes del
+  // usuario y sus respuestas). Los mensajes precargados salen de
+  // buildSeedMessages() en cada render, para que reaccionen al idioma.
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [typing, setTyping] = useState(false);
@@ -143,6 +156,8 @@ const TuteWidget = forwardRef<TuteWidgetHandle>(function TuteWidget(_, ref) {
     setBusy(false);
   }
 
+  const allMessages = [...buildSeedMessages(t), ...messages];
+
   return (
     <>
       <div className={`tute-widget${isOpen ? " open" : ""}`}>
@@ -157,11 +172,14 @@ const TuteWidget = forwardRef<TuteWidgetHandle>(function TuteWidget(_, ref) {
           <img className="tute-avatar-img" src={TUTE_HEAD_IMAGES[tuteState]} alt="Tute" />
           <div>
             <b>Tute</b>
-            <span>● en línea</span>
+            <span className="tute-status-demo">{t(dictionary.tute.demoStatus)}</span>
           </div>
         </div>
+        <div className="tute-dev-notice" role="status">
+          {t(dictionary.tute.devBadge)}
+        </div>
         <div className="chat-log" ref={logRef}>
-          {messages.map((m, i) => (
+          {allMessages.map((m, i) => (
             <div key={i} className={`bubble ${m.role === "user" ? "user" : "tute"}`}>
               {m.text}
               {m.link && (

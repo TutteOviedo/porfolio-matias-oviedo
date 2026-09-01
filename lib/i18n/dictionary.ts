@@ -125,6 +125,93 @@ export const dictionary = {
     cta: { es: "¡Preguntale!", en: "Ask him!" },
   },
 
+  // ------------------------------------------------------------------ TUTE
+  // Textos del widget de chat (components/TuteWidget.tsx). Mientras el
+  // backend real (RAG + AWS Bedrock) no esté conectado, el widget arranca
+  // con un aviso de "en construcción" y responde en modo demo.
+  tute: {
+    // Primer mensaje fijo que Tute manda al abrir el chat, antes de que el
+    // usuario escriba nada.
+    constructionNotice: {
+      es:
+        "¡Hola! Soy Tute 👋 Un aviso antes de arrancar: todavía estoy en construcción. " +
+        "Mi cerebro de verdad (RAG + AWS Bedrock) se está terminando de conectar, así que " +
+        "por ahora te contesto con respuestas de ejemplo armadas a mano. Igual sirven para " +
+        "que veas cómo va a ser la conversación cuando esté 100% online.",
+      en:
+        "Hi! I'm Tute 👋 Quick heads-up before we start: I'm still under construction. " +
+        "My real brain (RAG + AWS Bedrock) is still being wired up, so for now I reply with " +
+        "hand-written sample answers. They're still handy for seeing how the conversation " +
+        "will feel once I'm fully online.",
+    },
+    // Banda persistente arriba del chat.
+    devBadge: {
+      es: "🚧 En construcción — respuestas de ejemplo mientras conecto el backend real (RAG + AWS Bedrock).",
+      en: "🚧 Under construction — sample replies while I wire up the real backend (RAG + AWS Bedrock).",
+    },
+    // Estado que se muestra en el header, al lado del nombre.
+    demoStatus: { es: "● en construcción", en: "● under construction" },
+
+    // Conversación de ejemplo precargada en el chat (modo demo). Cuando el
+    // backend real esté conectado deja de tener sentido, pero mientras tanto
+    // muestra el tipo de ida y vuelta que va a poder tener Tute.
+    demoUserQ1: { es: "¿Qué hace Matías?", en: "What does Matías do?" },
+    demoTuteA1: {
+      es: "Soporte de aplicaciones hace 6 años, y desde ahí sumó programación, AWS e IA. ¿Querés que te cuente de algún proyecto puntual?",
+      en: "Application support for 6 years, and from there he picked up programming, AWS and AI. Want me to tell you about a specific project?",
+    },
+    demoUserQ2: { es: "¿Cómo te hicieron a vos?", en: "How were you built?" },
+    demoTuteA2: {
+      es: "Buena pregunta - te llevo a la explicación completa de cómo me armaron y me testean 👇",
+      en: "Good question - let me take you to the full rundown of how I was built and how I'm tested 👇",
+    },
+    demoTuteA2Link: {
+      es: "Ver cómo me testean →",
+      en: "See how I'm tested →",
+    },
+  },
+
+  // ----------------------------------------------------------------- EVALS
+  // Textos de la página /evals (components/EvalsContent.tsx). Solo lo
+  // ESTRUCTURAL se traduce: título, intro, label del contador y los títulos y
+  // descripciones de las 4 categorías. Las preguntas y respuestas puntuales
+  // de cada caso (con PASS/FAIL) siguen hardcodeadas en español porque van a
+  // cambiar de contenido cuando conectemos el backend real y corramos evals
+  // de verdad.
+  evals: {
+    devNotice: {
+      es: "🚧 Estos son casos de ejemplo mientras conecto el backend real de Tute — cuando esté online, esta sección va a mostrar resultados reales de testing.",
+      en: "🚧 These are sample cases while I wire up Tute's real backend — once it's online, this section will show real testing results.",
+    },
+    heading: { es: "Cómo testeo a Tute", en: "How I test Tute" },
+    intro: {
+      es: "Un eval es un caso de prueba: le hago una pregunta a Tute y reviso si respondió como debía. Así confirmo que no alucina información, que usa bien sus herramientas, y que se mantiene dentro de los límites que le puse - antes de que un usuario real se tope con eso.",
+      en: "An eval is a test case: I ask Tute a question and check whether it answered the way it should. That's how I confirm it doesn't hallucinate information, that it uses its tools properly, and that it stays within the limits I set - before a real user runs into any of that.",
+    },
+    passLabel: { es: "casos pasan", en: "cases pass" },
+
+    cat1Title: { es: "Mantiene los límites", en: "Stays within bounds" },
+    cat1Desc: {
+      es: "Pruebo pedidos que buscan sacarlo del personaje o hacerle decir cosas que no debería - opiniones personales, saltarse instrucciones, datos privados.",
+      en: "I try requests that aim to break character or make it say things it shouldn't - personal opinions, skipping instructions, private data.",
+    },
+    cat2Title: { es: "No alucina información", en: "Doesn't hallucinate information" },
+    cat2Desc: {
+      es: "Le pregunto cosas que suenan plausibles pero son falsas o no están en su base de conocimiento, para confirmar que dice que no sabe en vez de inventar.",
+      en: "I ask it things that sound plausible but are false or aren't in its knowledge base, to confirm it says it doesn't know instead of making something up.",
+    },
+    cat3Title: { es: "Usa la herramienta correcta", en: "Uses the right tool" },
+    cat3Desc: {
+      es: "Tute tiene dos herramientas - una busca en mi base de conocimiento (RAG), otra consulta la API de GitHub. Acá verifico que elija la correcta según la pregunta.",
+      en: "Tute has two tools - one searches my knowledge base (RAG), the other queries the GitHub API. Here I check that it picks the right one for the question.",
+    },
+    cat4Title: { es: "Tono adecuado", en: "Right tone" },
+    cat4Desc: {
+      es: "Reviso que las respuestas mantengan un tono cercano y profesional, sin sonar robótico ni irse de tema, incluso en preguntas fuera de lo esperado.",
+      en: "I check that the answers keep a warm, professional tone, without sounding robotic or drifting off-topic, even on unexpected questions.",
+    },
+  },
+
   // -------------------------------------------------------------- PROJECTS
   projects: {
     eyebrow: { es: "seccion: trabajo hecho", en: "section: work done" },
